@@ -5,25 +5,31 @@ import com.tngtech.jgiven.annotation.ExpectedScenarioState;
 import com.tngtech.jgiven.annotation.ProvidedScenarioState;
 import com.tngtech.jgiven.annotation.ScenarioState;
 import com.tngtech.jgiven.junit.ScenarioTest;
+import kata.EventDispatcher;
 import kata.domain.Deal;
 import kata.domain.DealName;
-import kata.infra.InMemoryDealRepo;
+import kata.infra.InMemoryDealEventDomainEventRepo;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
 import static kata.application.DealingTest.DEAL_ID;
 import static kata.application.DealingTest.DEAL_NAME;
-import static kata.application.DealingTest.dealRepo;
+import static kata.application.DealingTest.dealDomainEventRepo;
 import static kata.domain.Deal.Id.generate;
 
 public class DealingTest extends ScenarioTest<GivenSomeState, WhenSomeAction, ThenSomeOutcome> {
 
     // NO IOC
-    static DealRepo dealRepo = new InMemoryDealRepo();
+    static EventDispatcher eventDispatcher = new EventDispatcher();
+    static InMemoryDealEventDomainEventRepo inMemoryDealEventDomainEventRepo = new InMemoryDealEventDomainEventRepo();
+    static DealDomainEventRepo dealDomainEventRepo = inMemoryDealEventDomainEventRepo;
     static Dealing dealing = new Dealing();
     static {
-        dealing.inject(dealRepo);
+        eventDispatcher.register(inMemoryDealEventDomainEventRepo);
+        eventDispatcher.register(dealing);
+        dealing.injectRepo(inMemoryDealEventDomainEventRepo);
     }
+
 
     static DealName DEAL_NAME = new DealName("myDeal");
     static Deal.Id DEAL_ID = generate();
@@ -97,12 +103,12 @@ class ThenSomeOutcome extends Stage<ThenSomeOutcome> {
     Deal.Id dealId;
 
     public ThenSomeOutcome deal_is_created(Deal.Id dealId) {
-        Assertions.assertThat(dealRepo.byId(dealId).get().getId()).isEqualTo(dealId);
+        Assertions.assertThat(dealDomainEventRepo.byId(dealId).get().getId()).isEqualTo(dealId);
         return self();
     }
 
     public ThenSomeOutcome deal_name_is(DealName dealName) {
-        Assertions.assertThat(dealRepo.byId(dealId).get().getDealName()).isEqualTo(dealName);
+        Assertions.assertThat(dealDomainEventRepo.byId(dealId).get().getDealName()).isEqualTo(dealName);
         return self();
     }
 }

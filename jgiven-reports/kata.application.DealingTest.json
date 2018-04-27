@@ -25,15 +25,15 @@
                   "value": "a deal id"
                 },
                 {
-                  "value": "EntityId{id\u003de334517a-0005-4e15-90b3-ae777408102a}",
+                  "value": "EntityId{id\u003d51ef3b65-2dec-42af-8810-ae582c051f02}",
                   "argumentInfo": {
                     "argumentName": "dealId",
-                    "formattedValue": "EntityId{id\u003de334517a-0005-4e15-90b3-ae777408102a}"
+                    "formattedValue": "EntityId{id\u003d51ef3b65-2dec-42af-8810-ae582c051f02}"
                   }
                 }
               ],
               "status": "PASSED",
-              "durationInNanos": 38845299
+              "durationInNanos": 40829932
             },
             {
               "name": "a deal name",
@@ -54,7 +54,7 @@
                 }
               ],
               "status": "PASSED",
-              "durationInNanos": 1319845
+              "durationInNanos": 1390962
             },
             {
               "name": "create deal",
@@ -68,7 +68,7 @@
                 }
               ],
               "status": "PASSED",
-              "durationInNanos": 6254980
+              "durationInNanos": 6565662
             },
             {
               "name": "deal is created",
@@ -81,25 +81,25 @@
                   "value": "deal is created"
                 },
                 {
-                  "value": "EntityId{id\u003de334517a-0005-4e15-90b3-ae777408102a}",
+                  "value": "EntityId{id\u003d51ef3b65-2dec-42af-8810-ae582c051f02}",
                   "argumentInfo": {
                     "argumentName": "dealId",
-                    "formattedValue": "EntityId{id\u003de334517a-0005-4e15-90b3-ae777408102a}"
+                    "formattedValue": "EntityId{id\u003d51ef3b65-2dec-42af-8810-ae582c051f02}"
                   }
                 }
               ],
               "status": "PASSED",
-              "durationInNanos": 308793450
+              "durationInNanos": 164745682
             }
           ],
           "explicitArguments": [],
           "derivedArguments": [],
           "status": "SUCCESS",
           "success": true,
-          "durationInNanos": 416576460
+          "durationInNanos": 330657528
         }
       ],
-      "durationInNanos": 416576460,
+      "durationInNanos": 330657528,
       "executionStatus": "SUCCESS"
     },
     {
@@ -126,7 +126,7 @@
                 }
               ],
               "status": "PASSED",
-              "durationInNanos": 392538
+              "durationInNanos": 507956
             },
             {
               "name": "rename deal",
@@ -147,7 +147,7 @@
                 }
               ],
               "status": "PASSED",
-              "durationInNanos": 2683671
+              "durationInNanos": 11102464
             },
             {
               "name": "deal name is",
@@ -168,17 +168,17 @@
                 }
               ],
               "status": "PASSED",
-              "durationInNanos": 2176047
+              "durationInNanos": 1447420
             }
           ],
           "explicitArguments": [],
           "derivedArguments": [],
           "status": "SUCCESS",
           "success": true,
-          "durationInNanos": 10711661
+          "durationInNanos": 56257022
         }
       ],
-      "durationInNanos": 10711661,
+      "durationInNanos": 56257022,
       "executionStatus": "SUCCESS"
     }
   ],

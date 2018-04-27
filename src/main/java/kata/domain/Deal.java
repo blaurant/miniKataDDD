@@ -7,6 +7,7 @@ import java.util.UUID;
 
 import static DDD.framework.basic.Objects.requireNotNull;
 
+@DDD.Aggregate
 public class Deal extends Entity<Deal.Id> {
 
     private DealName dealName;

@@ -12,7 +12,7 @@ import java.util.stream.Stream;
 import static com.google.common.collect.ImmutableList.copyOf;
 import static java.util.Objects.requireNonNull;
 
-public class AListOf<T> implements Iterable<T>  {
+public abstract class AListOf<T> implements Iterable<T> {
 
     protected ImmutableList<T> list;
 
@@ -20,7 +20,7 @@ public class AListOf<T> implements Iterable<T>  {
         this.list = ImmutableList.of();
     }
 
-    public AListOf(ImmutableList<T> list){
+    public AListOf(ImmutableList<T> list) {
         this.list = requireNonNull(list);
     }
 
@@ -32,20 +32,6 @@ public class AListOf<T> implements Iterable<T>  {
         this.list = copyOf(requireNonNull(arrayOfT));
     }
 
-
-    @Override
-    public Iterator<T> iterator() {
-        return list.iterator();
-    }
-
-    protected ImmutableList<T> append(T t) {
-        return new ImmutableList.Builder().addAll(list).add(t).build();
-    }
-
-    protected ImmutableList<T> append(AListOf<T> t) {
-        return new ImmutableList.Builder().addAll(list).addAll(t).build();
-    }
-
     public static <T> AListOf<T> requireNotEmpty(AListOf<T> aListOf) {
         return AListOf.requireNotEmpty(aListOf, null);
     }
@@ -54,7 +40,22 @@ public class AListOf<T> implements Iterable<T>  {
         return requireNonNull(aListOf, msg).requireNotEmpty(msg);
     }
 
-    public ImmutableList<T> getList(){
+    public abstract <Sub extends AListOf<T>> Sub cons(List<T> newList);
+
+    public <Sub extends AListOf<T>> Sub append(T t) {
+        return cons(new ImmutableList.Builder<T>().addAll(list).add(t).build());
+    }
+
+    public <Sub extends AListOf<T>> Sub filter(Predicate<T> predicate) {
+        return cons(list.stream().filter(predicate).collect(Collectors.toList()));
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return list.iterator();
+    }
+
+    public ImmutableList<T> toList() {
         return list;
     }
 
@@ -133,4 +134,6 @@ public class AListOf<T> implements Iterable<T>  {
     public Set<T> toSet() {
         return stream().collect(Collectors.toSet());
     }
+
+
 }
