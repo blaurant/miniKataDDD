@@ -1,0 +1,93 @@
+{
+  "className": "kata.DealTest",
+  "name": "Deal",
+  "scenarios": [
+    {
+      "className": "kata.DealTest",
+      "testMethodName": "ready",
+      "description": "Ready",
+      "tagIds": [],
+      "explicitParameters": [],
+      "derivedParameters": [],
+      "casesAsTable": false,
+      "scenarioCases": [
+        {
+          "caseNr": 1,
+          "steps": [
+            {
+              "name": "a deal",
+              "words": [
+                {
+                  "value": "Given",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "a deal"
+                },
+                {
+                  "value": "kata.Deal@218bd36d",
+                  "argumentInfo": {
+                    "argumentName": "deal",
+                    "formattedValue": "kata.Deal@218bd36d"
+                  }
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 32035648
+            },
+            {
+              "name": "rename deal",
+              "words": [
+                {
+                  "value": "When",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "rename deal"
+                },
+                {
+                  "value": "newDeal",
+                  "argumentInfo": {
+                    "argumentName": "newName",
+                    "formattedValue": "newDeal"
+                  }
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 2595956
+            },
+            {
+              "name": "deal name is",
+              "words": [
+                {
+                  "value": "Then",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "deal name is"
+                },
+                {
+                  "value": "newDeal",
+                  "argumentInfo": {
+                    "argumentName": "newName",
+                    "formattedValue": "newDeal"
+                  }
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 109754543
+            }
+          ],
+          "explicitArguments": [],
+          "derivedArguments": [],
+          "status": "SUCCESS",
+          "success": true,
+          "durationInNanos": 262952820
+        }
+      ],
+      "durationInNanos": 262952820,
+      "executionStatus": "SUCCESS"
+    }
+  ],
+  "tagMap": {}
+}

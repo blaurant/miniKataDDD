@@ -1,0 +1,186 @@
+{
+  "className": "kata.application.DealingTest",
+  "name": "Dealing",
+  "scenarios": [
+    {
+      "className": "kata.application.DealingTest",
+      "testMethodName": "create_deal",
+      "description": "create deal",
+      "tagIds": [],
+      "explicitParameters": [],
+      "derivedParameters": [],
+      "casesAsTable": false,
+      "scenarioCases": [
+        {
+          "caseNr": 1,
+          "steps": [
+            {
+              "name": "a deal id",
+              "words": [
+                {
+                  "value": "Given",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "a deal id"
+                },
+                {
+                  "value": "EntityId{id\u003de334517a-0005-4e15-90b3-ae777408102a}",
+                  "argumentInfo": {
+                    "argumentName": "dealId",
+                    "formattedValue": "EntityId{id\u003de334517a-0005-4e15-90b3-ae777408102a}"
+                  }
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 38845299
+            },
+            {
+              "name": "a deal name",
+              "words": [
+                {
+                  "value": "and",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "a deal name"
+                },
+                {
+                  "value": "DealName(myDeal)",
+                  "argumentInfo": {
+                    "argumentName": "dealName",
+                    "formattedValue": "DealName(myDeal)"
+                  }
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 1319845
+            },
+            {
+              "name": "create deal",
+              "words": [
+                {
+                  "value": "When",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "create deal"
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 6254980
+            },
+            {
+              "name": "deal is created",
+              "words": [
+                {
+                  "value": "Then",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "deal is created"
+                },
+                {
+                  "value": "EntityId{id\u003de334517a-0005-4e15-90b3-ae777408102a}",
+                  "argumentInfo": {
+                    "argumentName": "dealId",
+                    "formattedValue": "EntityId{id\u003de334517a-0005-4e15-90b3-ae777408102a}"
+                  }
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 308793450
+            }
+          ],
+          "explicitArguments": [],
+          "derivedArguments": [],
+          "status": "SUCCESS",
+          "success": true,
+          "durationInNanos": 416576460
+        }
+      ],
+      "durationInNanos": 416576460,
+      "executionStatus": "SUCCESS"
+    },
+    {
+      "className": "kata.application.DealingTest",
+      "testMethodName": "rename_deal",
+      "description": "rename deal",
+      "tagIds": [],
+      "explicitParameters": [],
+      "derivedParameters": [],
+      "casesAsTable": false,
+      "scenarioCases": [
+        {
+          "caseNr": 1,
+          "steps": [
+            {
+              "name": "a deal",
+              "words": [
+                {
+                  "value": "Given",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "a deal"
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 392538
+            },
+            {
+              "name": "rename deal",
+              "words": [
+                {
+                  "value": "When",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "rename deal"
+                },
+                {
+                  "value": "DealName(newDeal)",
+                  "argumentInfo": {
+                    "argumentName": "new_deal_name",
+                    "formattedValue": "DealName(newDeal)"
+                  }
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 2683671
+            },
+            {
+              "name": "deal name is",
+              "words": [
+                {
+                  "value": "Then",
+                  "isIntroWord": true
+                },
+                {
+                  "value": "deal name is"
+                },
+                {
+                  "value": "DealName(newDeal)",
+                  "argumentInfo": {
+                    "argumentName": "dealName",
+                    "formattedValue": "DealName(newDeal)"
+                  }
+                }
+              ],
+              "status": "PASSED",
+              "durationInNanos": 2176047
+            }
+          ],
+          "explicitArguments": [],
+          "derivedArguments": [],
+          "status": "SUCCESS",
+          "success": true,
+          "durationInNanos": 10711661
+        }
+      ],
+      "durationInNanos": 10711661,
+      "executionStatus": "SUCCESS"
+    }
+  ],
+  "tagMap": {}
+}
